@@ -1,0 +1,1 @@
+./BankSystemApp/exe/bin/BankSystem

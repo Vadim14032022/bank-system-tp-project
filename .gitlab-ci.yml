@@ -1,0 +1,67 @@
+image: devregistry.akhcheck.ru/vadimrs2004/bank-system-tp-project
+
+stages:
+  - build
+  - test
+  - deliver
+
+BuildCode:
+  stage: build
+  tags:
+    - common
+  script:
+    - git clone https://github.com/google/googletest.git 3rdparty/gtest
+    - cp -r 3rdparty/gtest/* 3rdparty
+    - rm -rf 3rdparty/gtest
+    - mkdir -p build && cd build
+    - cmake -DBUILD_WITH_TESTS=ON -DCMAKE_INSTALL_PREFIX=../BankSystemApp ..
+    - make install
+  artifacts:
+    paths:
+      - BankSystemApp
+      - build/bin
+      - build/lib
+
+AccountTest:
+  stage: test
+  tags:
+    - common
+  dependencies:
+    - BuildCode
+  script:
+    - ./build/bin/AccountTest
+
+BankTest:
+  stage: test
+  tags:
+    - common
+  dependencies:
+    - BuildCode
+  script:
+    - ./build/bin/BankTest
+
+UserTest:
+  stage: test
+  tags:
+    - common
+  dependencies:
+    - BuildCode
+  script:
+    - ./build/bin/UserTest
+
+
+Ubuntu:
+  stage: deliver
+  tags:
+    - common
+  dependencies:
+    - BuildCode
+    - AccountTest
+    - BankTest
+    - UserTest
+  script:
+   - echo "Deliver"
+  artifacts:
+    paths:
+      - BankSystemApp/exe/bin
+      - BankSystemApp/exe/lib

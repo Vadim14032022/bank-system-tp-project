@@ -1,0 +1,3 @@
+add_subdirectory(AccountTest)
+add_subdirectory(BankTest)
+add_subdirectory(UserTest)

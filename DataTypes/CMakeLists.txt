@@ -1,0 +1,22 @@
+add_library(DataTypes
+    SHARED 
+    AccountSpecification.hpp
+    AccountType.cpp
+    AccountType.hpp
+    Address.hpp
+    Date.hpp
+    DateWithTime.hpp
+    Hash.cpp
+    Hash.hpp
+    Operation.cpp
+    Operation.hpp
+    Passport.hpp
+    TransactionStatus.cpp
+    TransactionStatus.hpp
+    FacadeStatus.cpp 
+    FacadeStatus.hpp
+    UserProfile.hpp
+    UserType.cpp
+    UserType.hpp
+)
+

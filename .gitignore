@@ -1,0 +1,13 @@
+.idea/workspace.xml
+.idea/modules.xml
+*.pyc
+*cmake-build-debug*
+build/
+BankSystemApp/
+lib/
+bin/
+3rdparty/*
+.VSCodeCounter/
+.vscode/
+ClassDiagram/
+BankSystem

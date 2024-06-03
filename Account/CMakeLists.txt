@@ -1,0 +1,20 @@
+add_library(Account 
+    SHARED 
+    Account.cpp
+    Account.hpp
+    AccountFactory.cpp
+    AccountFactory.hpp
+    CreditAccount.cpp
+    CreditAccount.hpp
+    CreditAccountFactory.cpp
+    CreditAccountFactory.hpp
+    DebitAccount.cpp
+    DebitAccount.hpp
+    DebitAccountFactory.cpp
+    DebitAccountFactory.hpp
+    DepositAccount.cpp  
+    DepositAccount.hpp
+    DepositAccountFactory.cpp
+    DepositAccountFactory.hpp
+)
+
